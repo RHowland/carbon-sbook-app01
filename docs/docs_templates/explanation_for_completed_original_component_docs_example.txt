@@ -1,0 +1,99 @@
+Original_Component_Docs Template Explanation
+
+The purpose of this document is to provide an overview of 
+how to use the original_component_docs_template.txt file 
+to add documentation to a React or Next.js component. 
+
+
+
+See this file for an example of a completed template:
+  "completed_original_component_docs_example.txt"
+
+
+  
+Please notice these details:
+1. The first line of the component must contain the 
+   name of the  component: 
+   // Component name: (your component name)
+   (See line 1)
+   
+2. The original code block only contains two comments: 
+     // Section 1
+     // Section 2 
+    on lines 10 and 15.
+
+3. There are very few line comments that can clutter up 
+   the code and make it more difficult for a skilled 
+   developer to read. 
+
+4. On lines 54 thru 58, please enter these five details: 
+     53  File Name      : 
+     54  Component Name : 
+     55  Component Type : 
+     56  Date Created   : 
+     57  Dev Name       :                (person(s) who first coded 
+                                          this component)
+
+   On line 58, the two developer initials (rjh nrk) tell you that 
+   two developers first coded this component.  
+ 
+ 
+5. Please answer the following question with an explanation of 
+   one or more sentences. 
+   Question: "Why was it necessary to create this component?"
+
+   For most of the time, when you are using standard React coding methods, 
+   you should provide this answer:  
+     "To follow standard good coding guidelines."
+
+   However when something does not work correctly when using standard or 
+   normal coding practices, it may be necessary for the developer to take 
+   a non-standard approach to get around that problem. 
+   When this happens, the answer to this question should be 
+   in this format: 
+   a. First describe the problem that occurred. 
+   b. Then describe what you chose to do to get around that 
+      problem. 
+   c. Example answer: 
+       "The xyz service kept returning a faulty json object with 
+       some extra trailing characters so I had to write this  
+       component to remove the incorrect characters."
+
+6 Please answer the following question with an explanation of 
+   one or two sentences:
+   Question: "What does this component do?"
+   (see line 64)
+
+7. Section Comments
+   (see lines 69 to 78)
+   When you need to add some line comments, please add a 
+   short comment like:  "// Section 3"  or  "// Section 4" 
+   and then in this area, enter the same short comment 
+   followed by the actual text of the comment.  
+   
+   By doing line comments this way, it will prevent 
+   cluttering the code with distracting line comments. 
+
+   Notice (on line 10) the "Section 1" line comment appears 
+   and further down (on line 70), the same "Section 1" 
+   heading appears again and it is followed by the full 
+   comment text. 
+
+8. Please answer the following question with either:
+     "NO" 
+   or with  
+     "YES" followed by one or two sentences to explain your answer.
+
+   Question: Did you have to write any unusual code?
+   (see line 88)
+
+9. Code Revisions
+   Every time you make a revision or update to this component, 
+   please do the following:
+   a. copy the Component Revision form from the 
+      code_rev_template.txt file and paste it after the last 
+      documentation entry on the bottom of the component code 
+      block.
+   b. Enter your comments to document the changes you made.  
+
+(End of Document)
