@@ -7,7 +7,8 @@
 
 import React from 'react';
 import classNames from 'classnames';
-// import { usePrefix } from '../../internal/usePrefix';
+import { useIdPrefix } from '../../carbon-sbook-util/internal/useIdPrefix';
+import { usePrefix } from '../../carbon-sbook-util/internal/usePrefix';
 
 
 // import { useId } from '../../internal/useId';
@@ -45,10 +46,10 @@ const ButtonBase = React.forwardRef(function ButtonBase<
   ref: React.Ref<unknown>
 ) {
 
-//   const prefix = usePrefix();
+  const prefix = usePrefix();
 
 // PERSONAL ===> Used a default value;
-  const prefix = 'btn-base';
+//   const prefix = 'btn-base';
 
   const buttonClasses = classNames(className, {
     [`${prefix}--btn`]: true,
@@ -82,8 +83,8 @@ const ButtonBase = React.forwardRef(function ButtonBase<
   const dangerButtonVariants = ['danger', 'danger--tertiary', 'danger--ghost'];
 
   let component: React.ElementType = 'button';
-//   const assistiveId = useId('danger-description');
-  const assistiveId = 'aria-danger-description';
+  const assistiveId = useId('danger-description');
+//   const assistiveId = 'aria-danger-description';
   
   const { 'aria-pressed': ariaPressed, 'aria-describedby': ariaDescribedBy } =
     rest;

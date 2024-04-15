@@ -3,7 +3,7 @@ import React, { ForwardedRef } from 'react';
 import { ButtonSize } from '../Button';
 import classNames from 'classnames';
 import { Tooltip } from '../Tooltip';
-import { usePrefix } from '../../internal/usePrefix';
+import { usePrefix } from '../../carbon-sbook-util/internal/usePrefix';
 import ButtonBase from '../Button/ButtonBase';
 
 export const IconButtonKinds = [
