@@ -17,9 +17,6 @@ export type IconButtonKind = (typeof IconButtonKinds)[number];
 
 interface IconButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * Specify how the trigger should align with the tooltip
-   */
   align?:
     | 'top'
     | 'top-left'
@@ -34,68 +31,17 @@ interface IconButtonProps
     | 'left'
     | 'right';
 
-  /**
-   * Provide an icon or asset to be rendered inside of the IconButton
-   */
   children?: React.ReactNode;
-
-  /**
-   * Specify an optional className to be added to your Button
-   */
   className?: string;
-
-  /**
-   * Determines whether the tooltip should close when inner content is activated (click, Enter or Space)
-   */
   closeOnActivation?: boolean;
-
-  /**
-   * Specify whether the tooltip should be open when it first renders
-   */
   defaultOpen?: boolean;
-
-  /**
-   * Specify whether the Button should be disabled, or not
-   */
   disabled?: boolean;
-
-  /**
-   * Specify the duration in milliseconds to delay before displaying the tooltip
-   */
   enterDelayMs?: number;
-
-  /**
-   * Specify whether the IconButton is currently selected
-   */
-
   isSelected?: boolean;
-
-  /**
-   * Specify the type of button to be used as the base for the IconButton
-   */
   kind?: IconButtonKind;
-
-  /**
-   * Provide the label to be rendered inside of the Tooltip. The label will use
-   * `aria-labelledby` and will fully describe the child node that is provided.
-   * This means that if you have text in the child node it will not be
-   * announced to the screen reader.
-   */
   label: ReactNodeLike;
-
-  /**
-   * Specify the duration in milliseconds to delay before hiding the tooltip
-   */
   leaveDelayMs?: number;
-
-  /**
-   * Specify the size of the Button. Defaults to `md`.
-   */
   size?: ButtonSize;
-
-  /**
-   * Specify an optional className to be added to your Tooltip wrapper
-   */
   wrapperClasses?: string;
 }
 

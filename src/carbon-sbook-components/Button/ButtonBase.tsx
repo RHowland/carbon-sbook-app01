@@ -7,8 +7,13 @@
 
 import React from 'react';
 import classNames from 'classnames';
-import { usePrefix } from '../../internal/usePrefix';
-import { useId } from '../../internal/useId';
+// import { usePrefix } from '../../internal/usePrefix';
+
+
+// import { useId } from '../../internal/useId';
+
+// PERSONAL ===> Used a default function;
+import { useId } from '../../carbon-sbook-util/internal/useId';
 import { ButtonBaseProps, ButtonProps } from './Button';
 
 const ButtonBase = React.forwardRef(function ButtonBase<
@@ -39,7 +44,11 @@ const ButtonBase = React.forwardRef(function ButtonBase<
   }: ButtonProps<T>,
   ref: React.Ref<unknown>
 ) {
-  const prefix = usePrefix();
+
+//   const prefix = usePrefix();
+
+// PERSONAL ===> Used a default value;
+  const prefix = 'btn-base';
 
   const buttonClasses = classNames(className, {
     [`${prefix}--btn`]: true,
@@ -73,7 +82,9 @@ const ButtonBase = React.forwardRef(function ButtonBase<
   const dangerButtonVariants = ['danger', 'danger--tertiary', 'danger--ghost'];
 
   let component: React.ElementType = 'button';
-  const assistiveId = useId('danger-description');
+//   const assistiveId = useId('danger-description');
+  const assistiveId = 'aria-danger-description';
+  
   const { 'aria-pressed': ariaPressed, 'aria-describedby': ariaDescribedBy } =
     rest;
   let otherProps: Partial<ButtonBaseProps> = {
