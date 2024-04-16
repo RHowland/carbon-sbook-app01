@@ -171,7 +171,7 @@ function Tooltip<T extends React.ElementType>({
     setOpen(false, leaveDelayMs);
   }
 
-  function onMouseMove(evt) {
+  function onMouseMove(evt:any) {
     if (evt.buttons === 1) {
       setIsDragging(true);
     } else {
