@@ -14,7 +14,7 @@ import { useDelayedState } from '../../carbon-sbook-util/internal/useDelayedStat
 import { useId } from '../../carbon-sbook-util/internal/useId';
 import { useNoInteractiveChildren } from '../../carbon-sbook-util/internal/useNoInteractiveChildren';
 import { usePrefix } from '../../carbon-sbook-util/internal/usePrefix';
-import { type PolymorphicProps } from '../../types/common';
+import { type PolymorphicProps } from '../../carbon-sbook-util/types/common';
 
 /**
  * Event types that trigger a "drag" to stop.
@@ -106,7 +106,7 @@ function Tooltip<T extends React.ElementType>({
   const prefix = usePrefix();
   const child = React.Children.only(children);
 
-  const triggerProps = {
+  const triggerProps: Record<string, (...args : any[])=>void>= {
     onFocus: () => setOpen(true),
     onBlur: () => setOpen(false),
     onClick: () => closeOnActivation && setOpen(false),
@@ -118,11 +118,13 @@ function Tooltip<T extends React.ElementType>({
     onTouchStart: onDragStart,
   };
 
+  const otherProps: Record<string, string> = {}
+
   function getChildEventHandlers(childProps: any) {
     const eventHandlerFunctions = Object.keys(triggerProps).filter((prop) =>
       prop.startsWith('on')
     );
-    const eventHandlers = {};
+    const eventHandlers : Record<string, (...args : any[])=>void> = {};
     eventHandlerFunctions.forEach((functionName) => {
       eventHandlers[functionName] = (evt: React.SyntheticEvent) => {
         triggerProps[functionName](evt);
@@ -135,9 +137,11 @@ function Tooltip<T extends React.ElementType>({
   }
 
   if (label) {
-    triggerProps['aria-labelledby'] = id;
+    otherProps['aria-labelledby'] = id;
+    // triggerProps['aria-labelledby'] = id;
   } else {
-    triggerProps['aria-describedby'] = id;
+    otherProps['aria-describedby'] = id;
+    // triggerProps['aria-describedby'] = id;
   }
 
   function onKeyDown(event: React.KeyboardEvent) {
@@ -210,14 +214,15 @@ function Tooltip<T extends React.ElementType>({
 
   return (
     <Popover
-      {...rest}
       align={align}
       className={cx(`${prefix}--tooltip`, customClassName)}
       dropShadow={false}
       highContrast
       onKeyDown={onKeyDown}
       onMouseLeave={onMouseLeave}
-      open={open}>
+      open={open}
+      {...rest}
+      >
       <div className={`${prefix}--tooltip-trigger__wrapper`}>
         {child !== undefined
           ? React.cloneElement(child, {

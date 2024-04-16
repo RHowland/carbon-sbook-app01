@@ -1,6 +1,6 @@
 import PropTypes, { ReactNodeLike } from 'prop-types';
 import React, { ForwardedRef } from 'react';
-import { ButtonSize } from '../Button';
+import { ButtonSize } from '../Button/Button';
 import classNames from 'classnames';
 import { Tooltip } from '../Tooltip';
 import { usePrefix } from '../../carbon-sbook-util/internal/usePrefix';
@@ -99,3 +99,5 @@ const IconButton = React.forwardRef(function IconButton(
       </Tooltip>
     );
   });
+
+  export { IconButton };
