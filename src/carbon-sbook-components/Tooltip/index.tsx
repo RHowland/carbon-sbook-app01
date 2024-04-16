@@ -221,7 +221,7 @@ function Tooltip<T extends React.ElementType>({
       onKeyDown={onKeyDown}
       onMouseLeave={onMouseLeave}
       open={open}
-      {...rest}
+    //   {...rest}
       >
       <div className={`${prefix}--tooltip-trigger__wrapper`}>
         {child !== undefined
