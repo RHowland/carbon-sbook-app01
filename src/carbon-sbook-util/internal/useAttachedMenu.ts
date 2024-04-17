@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { MouseEventHandler, useState } from 'react';
+import { MouseEventHandler, MutableRefObject, useState } from 'react';
 
 /**
  * Array of two numbers either representing [left, right] or [top, bottom].
@@ -50,7 +50,7 @@ export interface UseAttachedMenuReturn {
  * @param {Element|object} anchor The element or ref the menu should visually be attached to.
  * @returns {useAttachedMenuReturn}
  */
-export function useAttachedMenu(anchor): UseAttachedMenuReturn {
+export function useAttachedMenu(anchor: MutableRefObject<any>): UseAttachedMenuReturn {
   const [open, setOpen] = useState(false);
   const [position, setPosition] = useState<TwoCoordinates[]>([
     [-1, -1],
