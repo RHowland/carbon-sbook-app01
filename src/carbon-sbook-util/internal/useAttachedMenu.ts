@@ -84,7 +84,7 @@ export function useAttachedMenu(anchor: MutableRefObject<any>): UseAttachedMenuR
     }
   }
 
-  function handleMousedown(e) {
+  function handleMousedown(e:any) {
     // prevent default for mousedown on trigger element to avoid
     // the "blur" event from firing on the menu as this would close
     // it and immediately re-open since "click" event is fired after
