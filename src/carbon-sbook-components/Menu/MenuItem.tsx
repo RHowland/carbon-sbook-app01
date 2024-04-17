@@ -357,7 +357,7 @@ export const MenuItemSelectable = forwardRef<
     defaultValue: defaultSelected ?? false,
   });
 
-  function handleClick(e) {
+  function handleClick(e:any) {
     setChecked(!checked);
 
     if (onChange) {
@@ -468,7 +468,7 @@ MenuItemGroup.propTypes = {
   label: PropTypes.string.isRequired,
 };
 
-const defaultItemToString = (item) => item.toString();
+const defaultItemToString = (item:any) => item.toString();
 
 export interface MenuItemRadioGroupProps<Item>
   extends Omit<ComponentProps<'ul'>, 'onChange'> {
@@ -537,7 +537,7 @@ export const MenuItemRadioGroup = forwardRef(function MenuItemRadioGroup<Item>(
     defaultValue: defaultSelectedItem,
   });
 
-  function handleClick(item, e) {
+  function handleClick(item: Item, e: any) {
     setSelection(item);
 
     if (onChange) {
