@@ -7,7 +7,7 @@
 
 import React from 'react';
 import classNames from 'classnames';
-import { useIdPrefix } from '../../carbon-sbook-util/internal/useIdPrefix';
+// import { useIdPrefix } from '../../carbon-sbook-util/internal/useIdPrefix';
 import { usePrefix } from '../../carbon-sbook-util/internal/usePrefix';
 
 

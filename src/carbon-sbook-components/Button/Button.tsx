@@ -8,8 +8,8 @@
 import PropTypes from 'prop-types';
 import React, { useRef } from 'react';
 import { IconButton, IconButtonKind } from '../IconButton';
-import { composeEventHandlers } from '../../tools/events';
-import { PolymorphicProps } from '../../types/common';
+import { composeEventHandlers } from '../../carbon-sbook-util/tools/events';
+import { PolymorphicProps } from '../../carbon-sbook-util/types/common';
 import { PopoverAlignment } from '../Popover';
 import ButtonBase from './ButtonBase';
 

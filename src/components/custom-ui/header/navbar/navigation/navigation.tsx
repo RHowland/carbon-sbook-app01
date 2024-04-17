@@ -87,9 +87,9 @@ export function NavigationMenuLinks() {
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
+              {/* <ListItem href="/docs/primitives/typography" title="Typography">
                 Styles for headings, paragraphs, lists...etc
-              </ListItem>
+              </ListItem> */}
               <ListItem href="/mycomponents" title="components">
                 Our personal carbon-sbook components
               </ListItem>
