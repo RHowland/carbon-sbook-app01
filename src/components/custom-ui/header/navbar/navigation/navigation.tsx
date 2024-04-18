@@ -90,7 +90,7 @@ export function NavigationMenuLinks() {
               {/* <ListItem href="/docs/primitives/typography" title="Typography">
                 Styles for headings, paragraphs, lists...etc
               </ListItem> */}
-              <ListItem href="/mycomponents" title="components">
+              <ListItem href="mycomponents" title="components">
                 Our personal carbon-sbook components
               </ListItem>
             </ul>

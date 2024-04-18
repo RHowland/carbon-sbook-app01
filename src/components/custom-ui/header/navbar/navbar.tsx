@@ -1,6 +1,7 @@
 import { NavigationMenuLinks } from "./navigation/navigation";
 import { NavbarLogo } from "./logo/logo";
 import { Cta } from "./cta/cta";
+import MyLogo from "@/app/mycomponents";
 
 export const Navbar = () => {
   return (
@@ -12,7 +13,8 @@ export const Navbar = () => {
           <div className="flex justify-between items-center py-4">
             {/* Section 3: Logo and navigation links */}
             <div className="flex items-center">
-              <NavbarLogo />
+              {/* <NavbarLogo /> */}
+              <MyLogo />
               <ul className="flex space-x-4 ml-8">
                 <NavigationMenuLinks />
               </ul>

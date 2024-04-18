@@ -1,9 +1,4 @@
-/**
- * Copyright IBM Corp. 2023
- *
- * This source code is licensed under the Apache-2.0 license found in the
- * LICENSE file in the root directory of this source tree.
- */
+'use client'
 
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -85,7 +80,7 @@ interface MenuProps extends React.HTMLAttributes<HTMLUListElement> {
   size?: 'xs' | 'sm' | 'md' | 'lg';
 
   /**
-   * Specify a DOM node where the Menu should be rendered in. Defaults to document.body.
+   * Specify a DOM node where the Menu should be rendered in. Defaults to _document.body.
    */
   target?: HTMLElement;
 
@@ -114,13 +109,22 @@ const Menu = forwardRef<HTMLUListElement, MenuProps>(function Menu(
     size = 'sm',
     // TODO: #16004
     // eslint-disable-next-line ssr-friendly/no-dom-globals-in-react-fc
-    target = document.body,
+    target = typeof document !== 'undefined' ? document.body : null, // document.body,
     x = 0,
     y = 0,
     ...rest
   },
   forwardRef
 ) {
+
+  const [_document, set_document] = useState<Document | null>(null)
+
+  useEffect(() => {
+      target = target? target : document.body
+      set_document(document)
+
+  }, [])
+
   const prefix = usePrefix();
 
   const focusReturn = useRef<HTMLElement | null>(null);
@@ -167,7 +171,7 @@ const Menu = forwardRef<HTMLUListElement, MenuProps>(function Menu(
     actionButtonWidth = w;
   }
 
-  // Set RTL based on the document direction or `LayoutDirection`
+  // Set RTL based on the _document direction or `LayoutDirection`
   const { direction } = useLayoutDirection();
 
   function returnFocus() {
@@ -178,7 +182,7 @@ const Menu = forwardRef<HTMLUListElement, MenuProps>(function Menu(
 
   function handleOpen() {
     if (menu.current) {
-      focusReturn.current = document.activeElement as HTMLElement;
+      focusReturn.current = document!.activeElement as HTMLElement;
 
       const pos = calculatePosition();
       if (
@@ -234,7 +238,7 @@ const Menu = forwardRef<HTMLUListElement, MenuProps>(function Menu(
 
   function focusItem(e?: React.KeyboardEvent<HTMLUListElement>) {
     const currentItem = focusableItems.findIndex((item) =>
-      item.ref.current.contains(document.activeElement)
+      item.ref.current.contains(document!.activeElement)
     );
     let indexToFocus = currentItem;
 
@@ -437,7 +441,7 @@ const Menu = forwardRef<HTMLUListElement, MenuProps>(function Menu(
     </MenuContext.Provider>
   );
 
-  return isRoot ? (open && createPortal(rendered, target)) || null : rendered;
+  return isRoot ? (open && createPortal(rendered, target!)) || null : rendered;
 });
 
 Menu.propTypes = {

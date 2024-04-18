@@ -2,6 +2,7 @@ import React from "react";
 import { Footer } from "@/components/custom-ui/footer/footer";
 import { Navbar } from "@/components/custom-ui/header/navbar/navbar";
 import { Hero } from "@/components/custom-ui/landing-page/hero/hero";
+import Mycomponents from "./mycomponents";
 
 const Home: React.FC = () => {
   return (
