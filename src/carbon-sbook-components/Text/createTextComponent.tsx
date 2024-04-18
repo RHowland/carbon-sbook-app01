@@ -16,7 +16,7 @@ export function createTextComponent(
     return <Text as={element} {...props} />;
   }
 
-  if (__DEV__) {
+  if (true) {
     TextWrapper.displayName = displayName;
   }
 

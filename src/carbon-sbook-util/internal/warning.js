@@ -1,7 +1,7 @@
 
 const emptyFunction = function () {};
 
-const warning = __DEV__
+const warning = true
   ? function warning(condition, format, ...args) {
       if (format === undefined) {
         throw new Error(
