@@ -4,21 +4,32 @@ import { Navbar } from "@/components/custom-ui/header/navbar/navbar";
 import { Hero } from "@/components/custom-ui/landing-page/hero/hero";
 import Mycomponents from "./mycomponents";
 
+// const Home: React.FC = () => {
+//   return (
+//     <>
+//       {/* Section 1: Navigation */}
+//       <section aria-label="Navigation">
+//         <Navbar />
+//       </section>
+//       {/* Section 2: Hero */}
+//       <section aria-label="Hero">
+//         <Hero />
+//       </section>
+//       {/* Section 3: Footer */}
+//       <section aria-label="Footer">
+//         <Footer></Footer>
+//       </section>
+//     </>
+//   );
+// };
+
 const Home: React.FC = () => {
   return (
     <>
       {/* Section 1: Navigation */}
-      <section aria-label="Navigation">
-        <Navbar />
-      </section>
-      {/* Section 2: Hero */}
-      <section aria-label="Hero">
-        <Hero />
-      </section>
-      {/* Section 3: Footer */}
-      <section aria-label="Footer">
-        <Footer></Footer>
-      </section>
+      <div className='' aria-label="Navigation">
+        <Mycomponents />
+      </div>
     </>
   );
 };
